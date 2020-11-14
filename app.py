@@ -18,10 +18,6 @@ app.secret_key = "BayHarborButcher"
 # Creates an object for Flask RESTful API
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 # This creates a new endpoint: "/auth"
 jwt = JWT(app, authenticate, identity)
 
